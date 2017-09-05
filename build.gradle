@@ -1,0 +1,38 @@
+group 'com.zql'
+version '1.0-SNAPSHOT'
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '3.3'
+  distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+
+ext {
+    springVersion = '4.3.10.RELEASE'
+}
+
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.springframework', name: 'spring-core', version: '4.3.10.RELEASE'
+    compile group: 'org.springframework', name: 'spring-web', version: '4.3.10.RELEASE'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.10.RELEASE'
+    compile group: 'org.springframework', name: 'spring-aop', version: '4.3.10.RELEASE'
+    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.0'
+
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+    providedCompile group: 'javax.servlet', name: 'jsp-api', version: '2.0'
+
+}
+
+
