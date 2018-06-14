@@ -19,6 +19,7 @@ public class RequestMoniter extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         logger.info("uri:{}",request.getRequestURI());
         logger.info("params:{}", request.getParameterMap());
+
         return true;
     }
 }
